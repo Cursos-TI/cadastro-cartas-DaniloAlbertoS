@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main (){
 
@@ -8,16 +9,20 @@ int main (){
     char cidade1[50], cidade2[50];
     int populacao1, populacao2, p_turisticos1, p_turisticos2;
     float area1, area2, pib1, pib2;
+    float densidade1, densidade2;
+    float pib_per_capita1, pib_per_carpita2;
 
     // inserindo as informações com printf e coletando com scanf
     printf("=======================================================\n");
     printf("Ola seja bem vindo ao Super Trunfo\n");
 
+
+    //-------- carta 1--------//
     printf("Digite a inicial do estado de A a H: \n");
-    scanf("%c",&estado1);
+    scanf(" %c",&estado1);// o espaco antes do %c limpa enter digitados antes.
 
     printf("Digite o codigo da carta, um numero de 01 a 04: \n");
-    scanf("%s", codigo_carta1);
+    scanf(" %s", codigo_carta1);
 
     // limpando  o espaco do \n para a string abaixo
     getchar();
@@ -27,16 +32,23 @@ int main (){
         cidade1[strcspn(cidade1, "\n")] = '\0'; // limpa o \n na memoria apos o fgets
 
     printf("Digite o numero da População: \n");
-        scanf("%d",&populacao1);
+        scanf(" %d",&populacao1);
 
     printf("Digite a área em Km²: \n");
-        scanf("%f",&area1);
+        scanf(" %f",&area1);
+        
 
     printf("Digite o PIB do Estado: \n");
-        scanf("%f", &pib1);
+        scanf(" %f", &pib1);
 
     printf("Digite a quantidade de pontos turistícos na cidade: \n");
-        scanf("%d", &p_turisticos1);
+        scanf(" %d", &p_turisticos1);
+
+    // adicionando densidade populacional
+    densidade1 = (float) populacao1 / area1;
+
+    //adicionando pib per capita
+    pib_per_capita1 = (float) populacao1 / pib1;
 
     // apresentando os dados na tela 
     printf("Segue os dados da carta1\n");
@@ -50,6 +62,8 @@ int main (){
     printf("Area: %.2f Km²\n",area1);
     printf("PIB: %.2f\n",pib1);
     printf("NUmero de Pontos Turisticos: %d \n",p_turisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita1);
     printf("=======================================================\n");
 
     getchar();
@@ -57,10 +71,10 @@ int main (){
     // pegando dados da carta 2
 
     printf("Digite a inicial do estado de A a H: \n");
-    scanf("%c",&estado2);
+    scanf(" %c",&estado2);
 
     printf("Digite o codigo da carta, um numero de 01 a 04: \n");
-    scanf("%s", codigo_carta2);
+    scanf(" %s", codigo_carta2);
 
     // limpando  o espaco do \n para a string abaixo
     getchar();
@@ -70,16 +84,16 @@ int main (){
         cidade2[strcspn(cidade2, "\n")] ='\0'; // limpa o \n na memoria apos o fgets
 
     printf("Digite o numero da População: \n");
-        scanf("%d",&populacao2);
+        scanf(" %d",&populacao2);
 
     printf("Digite a área em Km²: \n");
-        scanf("%f",&area2);
+        scanf(" %f",&area2);
 
     printf("Digite o PIB do Estado: \n");
-        scanf("%f", &pib2);
+        scanf(" %f", &pib2);
 
     printf("Digite a quantidade de pontos turistícos na cidade: \n");
-        scanf("%d", &p_turisticos2);
+        scanf(" %d", &p_turisticos2);
 
      // apresentando os dados na tela 
     printf("Segue os dados da carta2\n");
