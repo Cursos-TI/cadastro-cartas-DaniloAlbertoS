@@ -293,13 +293,21 @@ int main (){
         break;
     }
 
-    if(pontos1 > pontos2){
+    int totalPontos;
+
+    totalPontos = pontos1 > pontos2 ? "A Grande vencedora foi a carta1!" : "A grande vencedora foi a carta2!";
+
+    if(pontos1==pontos2){
+        printf("Deu empate entre as cartas \n");
+    }
+
+   /* if(pontos1 > pontos2){
         printf("A Grande vencedora foi a carta1! \n");
     }else if(pontos1 < pontos2){
         printf("A grande vencedora foi a carta2! \n");
     }else{
         printf("Deu empate entre as cartas \n");
-    }
+    }*/
   
     return 0;
 }
